@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Özel renkleriniz (açık tema için) */
+    --my-primary-background: 0 0% 100%; /* #FFFFFF */
+    --my-secondary-background: 222 17% 97%; /* #F4F5F9 */
+    --my-tertiary-background: 0 0% 96%; /* #F5F5F5 */
+    --my-primary-text: 210 2% 53%; /* #868889 */
+    --my-secondary-text: 0 0% 0%; /* #000000 */
+    --my-primary-link: 245 87% 36%; /* #1A0DAB */
+    --my-primary-border: 0 0% 92%; /* #EBEBEB */
+    --my-primary-color: 90 53% 70%; /* #AEDC81 */
+    --my-primary-dark-color: 90 76% 44%; /* #6CC51D */
+    --my-primary-light-color: 90 100% 92%; /* #EBFFD7 */
+
+    /* shadcn/ui tarafından kullanılan değişkenler (kendi özel renklerinizle eşleştirin) */
+    --background: var(--my-primary-background); /* veya doğrudan HSL değeri */
+    --foreground: var(--my-secondary-text);
+
+    --primary: var(--my-primary-dark-color);
+    --primary-foreground: var(
+      --my-secondary-text
+    ); /* Primary üzerinde okunaklı bir metin rengi */
+
+    --secondary: var(--my-primary-light-color-background);
+    --secondary-foreground: var(--my-secondary-text);
+
+    --border: var(--my-primary-border);
+    --input: var(--my-primary-border);
+    --ring: var(
+      --my-primary-color
+    ); /* Genellikle vurgu rengi olarak kullanılır */
+
+    --muted: var(--my-tertiary-background);
+    --muted-foreground: var(--my-primary-text);
+
+    --accent: var(--my-primary-light-color);
+    --accent-foreground: var(--my-secondary-text);
+
+    --popover: var(--my-primary-background);
+    --popover-foreground: var(--my-secondary-text);
+
+    --card: var(--my-primary-background);
+    --card-foreground: var(--my-secondary-text);
+
+    --destructive: 0 84.2% 60.2%; /* Varsayılan kırmızı tonu veya kendi belirlediğiniz */
+    --destructive-foreground: 0 0% 98%;
+
+    --radius: 0.5rem; /* Bileşenlerin genel border-radius değeri */
+  }
+
+  .dark {
+    /* Koyu tema renkleriniz (isteğe bağlı, kendi koyu tema değerlerinizi ekleyin) */
+    /* Örnek: */
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    /* Diğer koyu tema değişkenleri... */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
